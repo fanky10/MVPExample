@@ -39,6 +39,15 @@ public class MainView extends ActivityView {
         bus.post(new BroadcastButtonPrssedEvent());
     }
 
+    @OnClick(R.id.btn_fetch_data)
+    void onFechDataPressed() {
+        bus.post(new FetchDataPressedEvent(txtName.getText().toString()));
+    }
+
+    public void showError(String errorText) {
+        Toast.makeText(getActivity(), "Error found "+errorText, Toast.LENGTH_SHORT).show();
+    }
+
     public void displayName(String name) {
         Context context = getContext();
         if (context == null) {
@@ -51,6 +60,18 @@ public class MainView extends ActivityView {
         private String name;
 
         public DisplayButtonPressedEvent(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
+    public static final class FetchDataPressedEvent {
+        private String name;
+
+        public FetchDataPressedEvent(String name) {
             this.name = name;
         }
 

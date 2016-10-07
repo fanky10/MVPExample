@@ -4,6 +4,8 @@ apply plugin: 'com.neenbedankt.android-apt'
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
 
     dependencies {
@@ -48,4 +50,11 @@ dependencies {
     testCompile('com.squareup.assertj:assertj-android:1.1.0') {
         exclude module: 'support-annotations'
     }
+
+    // http requests handling
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    // specific gson impl
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    // mapping JSON to POJO library
+    compile 'com.google.code.gson:gson:2.4'
 }

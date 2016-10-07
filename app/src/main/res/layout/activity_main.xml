@@ -38,5 +38,12 @@
             android:layout_height="wrap_content"
             style="?android:attr/buttonBarStyle"
             android:text="Send Broadcast"/>
+
+        <Button
+            android:id="@+id/btn_fetch_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarStyle"
+            android:text="Fetch"/>
     </LinearLayout>
 </LinearLayout>

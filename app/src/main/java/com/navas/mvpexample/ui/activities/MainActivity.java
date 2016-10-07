@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initPresenter() {
-        presenter = new MainPresenter(new MainModel(new BroadcastExecutor(this)), new MainView(this, BusProvider.getInstance()));
+        presenter = new MainPresenter(new MainModel(this), new MainView(this, BusProvider.getInstance()));
     }
 
     @Override
